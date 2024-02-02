@@ -6,7 +6,7 @@ require("dotenv").config();
 
 let dbConnect = require("./dbConnect");
 let userRoutes = require('./routes/userRoutes');
-let postRoutes = require('.routes/postRoutes');
+let postRoutes = require('./routes/postRoutes');
 
 app.use(express.json());
 app.use('/api/users', userRoutes);
