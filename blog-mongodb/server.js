@@ -4,11 +4,13 @@ const app = express();
 require("dotenv").config();
 // parse requests of content-type -application/json
 
-let dbConnect = require("./dbConnect")
-let userRoutes = require('./routes/userRoutes')
+let dbConnect = require("./dbConnect");
+let userRoutes = require('./routes/userRoutes');
+let postRoutes = require('.routes/postRoutes');
 
 app.use(express.json());
-app.use('/api/users', userRoutes)
+app.use('/api/users', userRoutes);
+app.use('/api/posts', postRoutes);
 
 
 app.get("/", (req, res) => {
