@@ -2,10 +2,10 @@
 
 let Models = require("../models"); // matches index.js
 
-const likePost = (req, res) => {
-  // adds a like to a post
-  console.log("Adding a like:", req.body);
-  new Models.Like(req.body)
+const addComment = (req, res) => {
+  // adds a comment to a post
+  console.log("Adding a comment:", req.body);
+  new Models.Comment(req.body)
     .save()
     .then((data) => res.send({ result: 200, data: data }))
     .catch((err) => {
@@ -14,10 +14,10 @@ const likePost = (req, res) => {
     });
 };
 
-const unlikePost = (req, res) => {
-  // deletes the like from the post matching the ID from the param
-  console.log("Deleting the like from a post");
-  Models.Like.findByIdAndDelete(req.params.id)
+const deleteComment = (req, res) => {
+  // deletes the comment from the post matching the ID from the param
+  console.log("Deleting the comment from a post");
+  Models.Comment.findByIdAndDelete(req.params.id)
     .then((data) => res.status(200).send({ result: 200, data: data }))
     .catch((err) => {
       console.log(err);
@@ -26,6 +26,6 @@ const unlikePost = (req, res) => {
 };
 
 module.exports = {
-  likePost,
-  unlikePost,
+  addComment,
+  deleteComment,
 };
