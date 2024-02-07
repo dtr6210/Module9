@@ -10,8 +10,10 @@ app.use(express.json());
 
 let userRoutes = require('./routes/userRoutes');
 let postRoutes = require('./routes/postRoutes');
+let commentRoutes = require('./routes/commentRoutes');
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
+app.use('/api/comments', commentRoutes);
 
 
 app.get("/", (req, res) => {
