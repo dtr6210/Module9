@@ -9,12 +9,14 @@ let userRoutes = require('./routes/userRoutes');
 let postRoutes = require('./routes/postRoutes');
 let likeRoutes = require('./routes/likeRoutes');
 let commentRoutes = require('./routes/commentRoutes');
+let nbaTeamRoutes = require('./routes/nbaTeamRoutes');
 
 app.use(express.json());
 app.use('/api/users', userRoutes);
 app.use('/api/posts', postRoutes);
 app.use('/api/likes', likeRoutes);
 app.use('/api/comments', commentRoutes);
+app.use('/api/teams', nbaTeamRoutes);
 
 
 
