@@ -5,4 +5,5 @@ module.exports = {
   Post: require("./post"),
   Like: require("./like"),
   Comment: require("./comment"),
+  NBA: require("./nba")
 };
